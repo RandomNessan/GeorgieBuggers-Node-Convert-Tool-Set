@@ -72,64 +72,66 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nodes'])) {
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>节点转 Outbound JSON</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>节点转 Outbound JSON - Random Cloud</title>
   <style>
     body {
       margin: 0;
       padding: 40px 20px;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #a0f0ed, #81d8d0);
-      color: #00332e;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #0f111a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    h2, h3 {
+      font-size: 1.6em;
+      margin: 30px 0 15px;
+      text-align: center;
+      color: #4fc3f7;
     }
 
     .container {
       max-width: 1000px;
-      margin: auto;
-    }
-
-    h2, h3 {
-      text-align: center;
-      font-weight: 600;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      margin: 0 auto;
     }
 
     textarea {
       width: 100%;
-      height: 200px;
-      padding: 12px;
+      padding: 14px;
       font-size: 14px;
       font-family: monospace;
-      border: 2px solid #81d8d0;
+      background-color: #10131e;
+      color: #00e676;
+      border: 1px solid #4fc3f7;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
       margin-bottom: 20px;
-      background: #ffffffdd;
       resize: vertical;
     }
 
     button {
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #00332e;
-      background: linear-gradient(90deg, #81d8d0, #7ec9f9);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-      margin: 10px auto;
       display: block;
+      width: 220px;
+      margin: 12px auto 30px;
+      padding: 12px;
+      font-size: 1em;
+      background-color: #4fc3f7;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     button:hover {
-      background: linear-gradient(90deg, #7ec9f9, #81d8d0);
-      transform: translateY(-2px);
+      background-color: #29b6f6;
     }
 
     @media (max-width: 600px) {
-      textarea { height: 160px; }
+      textarea { font-size: 13px; height: 180px; }
       button { width: 100%; }
     }
   </style>
