@@ -38,101 +38,112 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>custom_outbound 转 route 配置生成</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 40px 20px;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #a0f0ed, #81d8d0);
-            color: #00332e;
-            box-sizing: border-box;
-        }
+<style>
+  body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f111a;
+    color: #e0e0e0;
+    box-sizing: border-box;
+  }
 
-        h2, h3 {
-            text-align: center;
-            font-weight: 600;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
+  h2, h3 {
+    text-align: center;
+    font-weight: 600;
+    color: #4fc3f7;
+    margin: 30px 0 15px;
+  }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
-        textarea {
-            width: 100%;
-            height: 250px;
-            padding: 12px;
-            font-size: 14px;
-            font-family: monospace;
-            border: 2px solid #81d8d0;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            resize: vertical;
-            background: #ffffffcc;
-        }
+  textarea {
+    width: 100%;
+    height: 250px;
+    padding: 12px;
+    font-size: 14px;
+    font-family: monospace;
+    background-color: #10131e;
+    color: #00e676;
+    border: 1px solid #4fc3f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+    margin-bottom: 20px;
+    resize: vertical;
+  }
 
-        button {
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #00332e;
-            background: linear-gradient(90deg, #81d8d0, #7ec9f9);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-            margin: 10px auto;
-            display: block;
-        }
+  button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    background-color: #4fc3f7;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 255, 255, 0.1);
+    margin: 10px auto;
+    display: block;
+  }
 
-        button:hover {
-            background: linear-gradient(90deg, #7ec9f9, #81d8d0);
-            transform: translateY(-2px);
-        }
+  button:hover {
+    background-color: #29b6f6;
+  }
 
-        .port-input {
-            width: 100px;
-            margin-bottom: 10px;
-        }
+  .port-input {
+    width: 100px;
+    margin-bottom: 10px;
+    background-color: #10131e;
+    color: #00e676;
+    border: 1px solid #4fc3f7;
+    border-radius: 4px;
+    padding: 6px;
+  }
 
-        #modalOverlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 999;
-        }
+  #modalOverlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 999;
+  }
 
-        #modal {
-            background: white;
-            width: 500px;
-            max-width: 90%;
-            margin: 10% auto;
-            padding: 25px;
-            border-radius: 10px;
-            position: relative;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-        }
+  #modal {
+    background-color: #181c2b;
+    width: 500px;
+    max-width: 90%;
+    max-height: 60vh;
+    overflow-y: auto;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
+    color: #e0e0e0;
+  }
 
-        #modal h3 {
-            margin-top: 0;
-        }
+  #modal h3 {
+    margin-top: 0;
+    color: #4fc3f7;
+  }
 
-        #modal label {
-            display: inline-block;
-            width: 240px;
-            margin-top: 8px;
-        }
+  #modal label {
+    display: inline-block;
+    width: 240px;
+    margin-top: 8px;
+  }
 
-        @media (max-width: 600px) {
-            textarea { height: 200px; }
-            button { width: 100%; }
-            #modal { width: 95%; }
-        }
-    </style>
+  @media (max-width: 600px) {
+    textarea { height: 200px; }
+    button { width: 100%; }
+    #modal { width: 95%; }
+  }
+</style>
+
 </head>
 <body>
 <div class="container">
