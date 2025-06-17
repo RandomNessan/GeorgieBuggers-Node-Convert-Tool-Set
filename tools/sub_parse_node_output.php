@@ -203,24 +203,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['url'])) {
 }
 
 ?>
-<?php
-// 保持原有 PHP 逻辑不变
-// ...（你的 PHP 代码保留不变）...
-?>
+
 
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <title>节点解析结果 - Random Cloud</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 40px 20px;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #a0f0ed, #81d8d0);
-      color: #00332e;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #0f111a;
+      color: #e0e0e0;
       min-height: 100vh;
       box-sizing: border-box;
     }
@@ -230,7 +226,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['url'])) {
       margin-top: 40px;
       margin-bottom: 10px;
       text-align: center;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      color: #4fc3f7;
     }
 
     .container {
@@ -244,10 +240,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['url'])) {
       padding: 12px;
       font-size: 14px;
       font-family: monospace;
-      border: 2px solid #81d8d0;
+      background-color: #10131e;
+      color: #00e676;
+      border: 1px solid #4fc3f7;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin-bottom: 10px;
+      box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+      margin-bottom: 20px;
       resize: vertical;
     }
 
@@ -257,19 +255,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['url'])) {
       margin: 10px auto 40px auto;
       padding: 12px;
       font-size: 1em;
-      background: linear-gradient(90deg, #81d8d0, #7ec9f9);
+      background-color: #4fc3f7;
+      color: #000;
+      font-weight: bold;
       border: none;
-      border-radius: 8px;
-      color: #00332e;
-      font-weight: 600;
+      border-radius: 6px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     button:hover {
-      background: linear-gradient(90deg, #7ec9f9, #81d8d0);
-      transform: translateY(-2px);
+      background-color: #29b6f6;
     }
 
     @media (max-width: 600px) {
