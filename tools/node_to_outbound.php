@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nodes'])) {
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>节点转 Outbound JSON - Random Cloud</title>
+  <title>节点转 Outbound JSON</title>
   <style>
     body {
       margin: 0;
