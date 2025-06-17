@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>订阅链接解析器</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #a0f0ed, #81d8d0);
-      color: #00332e;
-      min-height: 100vh;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #0f111a;
+      color: #e0e0e0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
     }
 
     h2 {
       font-size: 2em;
       margin-bottom: 30px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      color: #4fc3f7;
     }
 
     form {
@@ -29,46 +28,52 @@
       flex-direction: column;
       align-items: center;
       width: 90%;
-      max-width: 800px;
+      max-width: 700px;
+      background: #1c1f2b;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
     }
 
     input[type="text"] {
       width: 100%;
-      padding: 12px;
-      font-size: 1em;
-      border: 2px solid #81d8d0;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 14px;
+      font-size: 16px;
+      border: 1px solid #4fc3f7;
+      border-radius: 6px;
+      background: #10131e;
+      color: #00e676;
+      outline: none;
+      margin-bottom: 20px;
     }
 
     input[type="submit"] {
-      margin-top: 20px;
+      background-color: #4fc3f7;
+      color: #000;
       padding: 12px 30px;
-      font-size: 1.1em;
+      font-size: 1em;
       border: none;
-      border-radius: 8px;
-      background: linear-gradient(90deg, #81d8d0, #7ec9f9);
-      color: #00332e;
-      font-weight: 600;
+      border-radius: 6px;
+      font-weight: bold;
       cursor: pointer;
-      transition: 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     input[type="submit"]:hover {
-      background: linear-gradient(90deg, #7ec9f9, #81d8d0);
-      transform: translateY(-2px);
+      background-color: #29b6f6;
     }
 
     @media (max-width: 600px) {
       h2 {
         font-size: 1.5em;
       }
-
-      input[type="text"] {
-        font-size: 0.9em;
+      form {
+        padding: 20px;
       }
-
+      input[type="text"] {
+        font-size: 0.95em;
+      }
       input[type="submit"] {
         width: 100%;
       }
@@ -76,7 +81,7 @@
   </style>
 </head>
 <body>
-  <h2>请输入订阅链接：</h2>
+  <h2>请输入订阅链接</h2>
   <form action="sub_parse_node_output.php" method="post">
     <input type="text" name="url" placeholder="https://example.com/subscribe?token=xxxxx" required>
     <input type="submit" value="解析节点信息">
